@@ -5,27 +5,22 @@ Translation status reporter for Kubernetes document translators
 ## Usage
 
 ```
-$ bundle exec ./k8s-doc-checksync.rb <websitefolder> [<branch> [<language>]]  > <htmlfile>
+$ bundle exec ./k8s-doc-checksync.rb <websitefolder> <language> > <htmlfile>
 ```
 
 - *websitefolder*: your Kubernetes website working folder.
-- *branch*: target branch to fetch (usually 'main`).
 - *language*: target language (such as `ja`).
 - *htmlfile*: html file to export a status.
 
 Example
 ```
-$ bundle exec ./k8s-doc-checksync.rb ~/working/kubernetes/website main ja > status-ja.html
+$ bundle exec ./k8s-doc-checksync.rb ~/working/kubernetes/website ja > status-ja.html
 ```
 
 ## Environment value
 
 - `QUIET=true`: silent mode
-- `SKIP_FETCH=true`: skip running git fetch
-
-## Modify
-
-Modify `upstream_branch = 'main'` line if your working git folder uses the other branch name for syncing with upstream's main branch.
+- `SKIP_PULL=true`: skip running git pull
 
 ## License
 

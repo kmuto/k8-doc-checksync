@@ -2,8 +2,8 @@
 # Copyright 2023 Kenshi Muto
 require 'git'
 
-upstream_branch = ARGV[1] || 'main'
-language = ARGV[2] || 'ja'
+language = ARGV[1] || 'ja'
+upstream_branch =  'main'
 
 Git.configure do |config|
   # config.git_ssh = '/path/to/ssh/script'
@@ -17,14 +17,11 @@ def log(s)
 end
 
 def update_upstream(g, upstream_branch)
-  unless g.branches[upstream_branch]
-    raise MyGitError.new("Missing branch #{upstream_branch}")
-  end
   log("Fetching #{upstream_branch}...")
   begin
-    g.fetch(upstream_branch)
+    g.pull
   rescue Git::GitExecuteError => e
-    raise MyGitError.new("Missing branch #{upstream_branch} or something wrong. #{e.message}")
+    raise MyGitError.new("Missing branch #{upstream_branch} or something wrong. #{e.message.to_s}")
   end
 end
 
@@ -153,7 +150,7 @@ rescue ArgumentError
 end
 
 begin
-  update_upstream(g, upstream_branch) unless ENV['SKIP_FETCH']
+  update_upstream(g, upstream_branch) unless ENV['SKIP_PULL']
   check_upstream(g, upstream_branch)
   check_workdir(ARGV[0], language)
 
