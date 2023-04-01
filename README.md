@@ -19,6 +19,8 @@ $ bundle exec ./k8s-doc-checksync.rb ~/working/kubernetes/website ja > status-ja
 
 Daily en-&gt;ja status: [https://kmuto.jp/k8s/](https://kmuto.jp/k8s/)
 
+![status sample](status.png)
+
 ## Environment value
 
 - `QUIET=true`: silent mode
