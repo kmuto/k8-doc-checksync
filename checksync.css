@@ -1,0 +1,69 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+div.table {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+td, th {
+  padding: 0.25em 1em 0.25em 1em;
+  background-color: rgb(240, 240, 240);
+  font-size: 1em;
+}
+
+th {
+  background-color: rgb(0, 0, 20);
+  color: white;
+}
+
+td.uptodate {
+  background-color: rgb(0, 255, 0);
+}
+
+td.untranslated {
+  background-color: rgb(200, 200, 255);
+}
+
+td.missing {
+  background-color: rgb(128, 0, 128);
+  color: white;
+}
+
+td.behind1 {
+  background-color: #ffffb3;
+}
+
+td.behind14 {
+  background-color: #ffff00;
+}
+
+td.behind30 {
+  background-color: #ffbc00;
+}
+
+td.behind90 {
+  background-color: #ff7b00;
+}
+
+td.behind180 {
+  background-color: #ff4a00;
+}
+
+td.behind365 {
+  background-color: #ff0000;
+  color: white;
+}
+
+address {
+  border-top: 1px solid rgb(0, 0, 128);
+  padding-top: 0.5em;
+  font-size: 0.9em;
+}
